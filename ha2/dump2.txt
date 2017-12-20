@@ -1,0 +1,16 @@
+CSCI 5271 - HA2
+
+huhnx025 - Jon Huhn
+larse702 - Zachary Larsen
+
+tcpdump Command
+sudo tcpdump -A -i ens4 src $CLIENT and dst $SERVER and port http and greater 300
+
+Packet
+13:35:56.970014 IP client.56670 > server.http: Flags [P.], seq 4135699281:4135699658, ack 700494734, win 237, options [nop,nop,TS val 136288486 ecr 136291365], length 377: HTTP: HEAD /secret/cheese.php HTTP/1.1
+E...Z.@.@.W..........^.P...Q)..............
+.......%HEAD /secret/cheese.php HTTP/1.1
+Host: 192.168.3.1
+Authorization: Digest username="seoh3", realm="Cheese", nonce="AnwSrmldBQA=29c8004e1c037bf9046b67e1f34e165f2b27e6e9", uri="/secret/cheese.php", cnonce="ZjgwZTAxMTQ3YTdjYWVlNzQ4OWE1ZmViZjZlMDE5ZTk=", nc=00000001, qop=auth, response="3fb2216945b3dff9a0f45c8ba112dfc7", algorithm="MD5"
+User-Agent: curl/7.47.0
+Accept: */*

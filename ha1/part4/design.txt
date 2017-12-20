@@ -1,0 +1,31 @@
+DESIGN - CSCI 5271
+HA 1 Exploit #4
+
+GROUP MEMBERS
+Zach Larsen - larse702@umn.edu
+Jon Huhn    - huhnx025@umn.edu
+
+DESIGN PRINCIPLES
+Our first design principle that we would like to advise the makers of BCVI on is
+the implementation of fail-safe defaults. In general, input should be checked
+against a whitelist rather than a blacklist. Additionally, input should be 
+sanitized before it used. This input could be from arguments to BCVI, 
+environment variables, or user input during execution. While BCVI already 
+addresses these issues in some places, like the filter buffer ex-mode command 
+(:%!) and the macro feature, there are still potential vulnerabilites in other 
+areas of BCVI through environment variables.
+
+Our second design principle that we would also advise would be the 
+implementation of separtion of privilege. BCVI currently checks the .conf file 
+to see if a user has permission to modify a file that they normally would not 
+have access to. By implementing a second access policy in BCVI, it would be more
+difficult for an attacker to gain permissions not normally given to them. This 
+could be done by implementing a special UNIX group such that only members of 
+that group would be granted permissions to files listed within sudobcvi.conf.
+ 
+Finally, we would like to advise the makers of BCVI to implement the design 
+principle of least privilege. sudobcvi will always run with root privileges for 
+the duration of its execution. This is not necessary when the file being edited 
+does not require special permission. As soon as sudobcvi detects that the user 
+already has permission to edit the current file, it should drop its root 
+privileges. 

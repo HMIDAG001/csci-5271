@@ -1,0 +1,16 @@
+CSCI 5271 - HA2
+
+huhnx025 - Jon Huhn
+larse702 - Zachary Larsen
+
+Commandto run tcpdump:
+sudo tcpdump -A -i ens4 src 192.168.3.2 and dst 192.168.3.1 and port http
+
+Packet:
+20:27:19.398516 IP 192.168.3.2.55322 > 192.168.3.1.http: Flags [P.], seq 70:140, ack 1, win 229, options [nop,nop,TS val 76759099 ecr 76761978], length 70: HTTP
+E..z.e@.@..............Pp.@.`......./......
+..@;..KzAccept-language: en
+Authorization: Basic c2VvaDM6Z2VoZWltbmlzMjcyNg==
+
+Username: seoh3
+Password: geheimnis2726
